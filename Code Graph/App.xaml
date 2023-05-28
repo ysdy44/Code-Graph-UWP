@@ -4,4 +4,54 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     >
 
+    <Application.Resources>
+        <ResourceDictionary>
+            <!--Theme-->
+            <ResourceDictionary.ThemeDictionaries>
+
+                <ResourceDictionary x:Key="Light">
+                    <!--Brush-->
+                    <SolidColorBrush x:Key="AppBrush3" Color="#000229"/>
+                    <SolidColorBrush x:Key="AppBrush2" Color="#703D00"/>
+                    <SolidColorBrush x:Key="AppBrush1" Color="#EEEBEE"/>
+
+                    <LinearGradientBrush x:Key="AppBlueLinearGradientBrush" StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#00D1FE"/>
+                        <GradientStop Offset="1" Color="#0048FE"/>
+                    </LinearGradientBrush>
+
+                    <!--Style-->
+                    <Style x:Key="AppToolTipStyle" TargetType="ToolTip">
+                        <Setter Property="BorderBrush" Value="{ThemeResource AppBlueLinearGradientBrush}"/>
+                        <Setter Property="Background" Value="{ThemeResource AppBlueLinearGradientBrush}"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="14"/>
+                    </Style>
+                </ResourceDictionary>
+
+                <ResourceDictionary x:Key="Dark">
+                    <!--Brush-->
+                    <SolidColorBrush x:Key="AppBrush3" Color="#333D96"/>
+                    <SolidColorBrush x:Key="AppBrush2" Color="#A25800"/>
+                    <SolidColorBrush x:Key="AppBrush1" Color="#424242"/>
+
+                    <LinearGradientBrush x:Key="AppBlueLinearGradientBrush" StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Offset="0" Color="#76EAF8"/>
+                        <GradientStop Offset="1" Color="#0B9DFF"/>
+                    </LinearGradientBrush>
+
+                    <!--Style-->
+                    <Style x:Key="AppToolTipStyle" TargetType="ToolTip">
+                        <Setter Property="BorderBrush" Value="{ThemeResource AppBlueLinearGradientBrush}"/>
+                        <Setter Property="Background" Value="{ThemeResource AppBlueLinearGradientBrush}"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="FontSize" Value="14"/>
+                    </Style>
+                </ResourceDictionary>
+
+            </ResourceDictionary.ThemeDictionaries>
+
+        </ResourceDictionary>
+    </Application.Resources>
+
 </Application>
