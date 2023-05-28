@@ -37,6 +37,14 @@ namespace Code_Graph
             {
                 if (e.ClickedItem is SymbolIcon item)
                 {
+                    switch (item.Symbol)
+                    {
+                        case Symbol.Add: this.Click(OptionType.New); break;
+                        case Symbol.Save: this.Click(OptionType.Save); break;
+                        case Symbol.OpenFile: this.Click(OptionType.Load); break;
+                        case Symbol.Delete: this.Click(OptionType.Clear); break;
+                        default: break;
+                    }
                 }
             };
         }
