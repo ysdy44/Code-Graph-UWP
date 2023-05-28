@@ -124,6 +124,8 @@
     <Compile Include="Elements\AlignmentGridWithSpot.cs" />
     <Compile Include="Elements\ApplicationTitleBarExtension.cs" />
     <Compile Include="Enums\OptionType.cs" />
+    <Compile Include="MainPage.Click.cs" />
+    <Compile Include="MainPage.Drag.cs" />
     <Compile Include="MainPage.Export.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
