@@ -121,6 +121,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Csproj.cs" />
+    <Compile Include="Datas\CsprojData.cs" />
+    <Compile Include="Datas\CsprojLine.cs" />
+    <Compile Include="Datas\GroupData.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
