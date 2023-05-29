@@ -161,17 +161,26 @@
         <elements:ApplicationTitleBarExtension x:Name="ApplicationView" TitleBarColor="{ThemeResource SystemColorBackgroundColor}" AccentTitleBarColor="White"/>
 
         <!--AlignmentGrid-->
-        <elements:AlignmentGridWithLines x:Name="AlignmentGrid"/>
+        <elements:AlignmentGridWithLines x:Name="AlignmentGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+            <UIElement.ManipulationMode>
+                TranslateX, TranslateY
+            </UIElement.ManipulationMode>
+        </elements:AlignmentGridWithLines>
 
         <!--Canvas-->
-        <Canvas x:Name="LineCanvas" Margin="12">
-            <!--Children-->
-        </Canvas>
-        <Canvas x:Name="EllipseCanvas" Margin="12">
-            <!--Children-->
-        </Canvas>
-        <Canvas x:Name="ThumbCanvas" Margin="12">
-            <!--Children-->
+        <Canvas x:Name="Canvas" Width="0" Height="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <UIElement.RenderTransform>
+                <TranslateTransform x:Name="TranslateTransform" X="0" Y="0"/>
+            </UIElement.RenderTransform>
+            <Canvas x:Name="LineCanvas">
+                <!--Children-->
+            </Canvas>
+            <Canvas x:Name="EllipseCanvas">
+                <!--Children-->
+            </Canvas>
+            <Canvas x:Name="ThumbCanvas">
+                <!--Children-->
+            </Canvas>
         </Canvas>
 
         <!--Foot-->
