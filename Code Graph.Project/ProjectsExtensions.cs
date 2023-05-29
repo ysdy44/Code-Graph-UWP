@@ -163,21 +163,26 @@ namespace Code_Graph.Project
         public static Csproj[] ToFiles(this IEnumerable<GroupData> datas)
         {
             int count = 0;
+            int index = 0;
             foreach (GroupData item in datas)
             {
                 if (item.Source == null) continue;
 
                 foreach (CsprojData data in item.Source)
                 {
-                    if (count < data.Index)
+                    count++;
+                    if (index < data.Index)
                     {
-                        count = data.Index;
+                        index = data.Index;
                     }
                 }
             }
-            if (count == 0) return null;
 
-            Csproj[] files = new Csproj[count + 1];
+            int length = System.Math.Max(count, index);
+            if (length == 0) return null;
+
+            Csproj[] files = new Csproj[length];
+            
             foreach (GroupData item in datas)
             {
                 if (item.Source == null) continue;
@@ -193,7 +198,7 @@ namespace Code_Graph.Project
                 }
             }
 
-            for (int i = 0; i < count + 1; i++)
+            for (int i = 0; i < length; i++)
             {
                 Csproj item = files[i];
                 item.Parents = files.Parents(i).ToNullableArray();
