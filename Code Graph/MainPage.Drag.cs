@@ -64,9 +64,8 @@ namespace Code_Graph
                 this.StartingIndex = this.ThumbChildren.IndexOf(item);
                 if (this.StartingIndex < 0) return;
 
-                Group group = this.Groups[this.StartingIndex];
-                this.StartingPoint.X = group.X * 10;
-                this.StartingPoint.Y = group.Y * 10;
+                this.StartingPoint.X = Canvas.GetLeft(item) + item.ActualWidth / 2;
+                this.StartingPoint.Y = Canvas.GetTop(item) + item.ActualHeight / 2;
             }
         }
         private void DragDelta(object sender, DragDeltaEventArgs e)

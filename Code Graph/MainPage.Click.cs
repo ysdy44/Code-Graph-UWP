@@ -125,7 +125,7 @@ namespace Code_Graph
                         if (lines.Count == 0) break;
 
                         this.Files = lines.ToFiles();
-                        this.Groups = this.Files.ToGroups((int)(base.ActualWidth / 2 / 10), (int)(base.ActualHeight / 2 / 10)).ToArray();
+                        this.Groups = this.Files.ToGroups(0, 0).ToArray();
                         this.Links = this.Groups.ToLines(this.Files).ToArray();
                         this.Click(OptionType.Add);
 
@@ -151,12 +151,22 @@ namespace Code_Graph
                         StorageFile file = await savePicker.PickSaveFileAsync();
                         if (file is null) break;
 
-                        using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                        if (true)
                         {
-                            new XDocument
+                            await FileIO.WriteTextAsync(file, new XDocument
                             (
                                 new XElement("Root", this.Groups.Select(this.Save))
-                            ).Save(stream.AsStream());
+                            ).ToString());
+                        }
+                        else
+                        {
+                            using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.ReadWrite))
+                            {
+                                new XDocument
+                                (
+                                    new XElement("Root", this.Groups.Select(this.Save))
+                                ).Save(stream.AsStream());
+                            }
                         }
                     }
                     break;
