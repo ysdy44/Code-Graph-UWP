@@ -125,7 +125,8 @@ namespace Code_Graph
                         if (lines.Count == 0) break;
 
                         this.Files = lines.ToFiles();
-                        this.Groups = this.Files.ToGroups(0, 0).ToArray();
+                        this.Groups = this.Files.ToGroups().ToArray();
+                        this.Groups.Arrange(0, 0);
                         this.Links = this.Groups.ToLines(this.Files).ToArray();
                         this.Click(OptionType.Add);
 

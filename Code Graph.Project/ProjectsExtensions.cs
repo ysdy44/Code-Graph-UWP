@@ -89,37 +89,44 @@ namespace Code_Graph.Project
 
         public static int Index(Csproj file) => file.Index;
         private static double Key(Csproj file) => file.Key;
-        public static IEnumerable<Group> ToGroups(this Csproj[] files, int x, int y) => from c in files.GroupBy(ProjectsExtensions.Key) select c.ToGroup(x, y);
-        private static Group ToGroup(this IEnumerable<Csproj> files, int x, int y)
+        public static IEnumerable<Group> ToGroups(this Csproj[] files) => from c in files.GroupBy(ProjectsExtensions.Key) select c.ToGroup();
+        private static Group ToGroup(this IEnumerable<Csproj> files) => new Group
         {
-            Level level = files.First().Level;
-            int[] source = files.Select(ProjectsExtensions.Index).ToNullableArray();
-            switch (level)
+            Level = files.First().Level,
+            Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
+        };
+
+        public static void Arrange(this Group[] groups, int x, int y)
+        {
+            int length = groups.Length;
+
+            switch (length)
             {
-                case Level.Level1:
-                    return new Group
+                case 0:
+                    break;
+                case 1:
+                    foreach (Group item in groups)
                     {
-                        X = x,
-                        Y = source == null ? y + 4 : y + 4 + source.Length,
-                        Level = level,
-                        Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
-                    };
-                case Level.Level3:
-                    return new Group
-                    {
-                        X = x,
-                        Y = source == null ? y - 4 : y - 4 - source.Length * 2,
-                        Level = level,
-                        Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
-                    };
+                        item.X = x;
+                        item.Y = y;
+                    }
+                    break;
                 default:
-                    return new Group
+                    double radius = System.Math.Pow(length, 0.5) * 10;
+
+                    for (int i = 0; i < length; i++)
                     {
-                        X = x,
-                        Y = y,
-                        Level = level,
-                        Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
-                    };
+                        double angle = System.Math.PI * 2 * i / length;
+
+                        double sin = System.Math.Sin(angle);
+                        double cos = System.Math.Cos(angle);
+
+                        Group item = groups[i];
+
+                        item.X = x + (int)(cos * radius);
+                        item.Y = y + (int)(sin * radius);
+                    }
+                    break;
             }
         }
 
