@@ -119,10 +119,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Elements\AlignmentGrid.cs" />
-    <Compile Include="Elements\AlignmentGridWithLines.cs" />
-    <Compile Include="Elements\AlignmentGridWithSpot.cs" />
-    <Compile Include="Elements\ApplicationTitleBarExtension.cs" />
     <Compile Include="Enums\OptionType.cs" />
     <Compile Include="MainPage.Click.cs" />
     <Compile Include="MainPage.Drag.cs" />

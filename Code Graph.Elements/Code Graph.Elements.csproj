@@ -120,6 +120,10 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AlignmentGrid.cs" />
+    <Compile Include="AlignmentGridWithLines.cs" />
+    <Compile Include="AlignmentGridWithSpot.cs" />
+    <Compile Include="ApplicationTitleBarExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Code_Graph.Elements.rd.xml" />
   </ItemGroup>
