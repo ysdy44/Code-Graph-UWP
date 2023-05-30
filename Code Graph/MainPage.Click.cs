@@ -1,9 +1,11 @@
-﻿using Code_Graph.Project;
+﻿using Code_Graph.Elements;
+using Code_Graph.Project;
 using Code_Graph.Project.Datas;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Windows.Input;
 using System.Xml.Linq;
 using Windows.Foundation;
 using Windows.Storage;
@@ -17,6 +19,34 @@ namespace Code_Graph
 {
     partial class MainPage
     {
+
+        //@Delegate
+        public event EventHandler CanExecuteChanged;
+
+        //@Command
+        public ICommand Command => this;
+        public bool CanExecute(object parameter) => parameter != default;
+        public void Execute(object parameter)
+        {
+            if (parameter is Symbol item)
+            {
+                switch (item)
+                {
+                    case Symbol.Add: this.Click(OptionType.New); break;
+                    case Symbol.Save: this.Click(OptionType.Save); break;
+                    case Symbol.OpenFile: this.Click(OptionType.Load); break;
+                    case Symbol.Delete: this.Click(OptionType.Clear); break;
+                    case Symbol.Help: this.Click(OptionType.Tutorial); break;
+                    case Symbol.Important: this.Click(OptionType.About); break;
+                    default: break;
+                }
+            }
+            else if (parameter is OptionType item2)
+            {
+                this.Click(item2);
+            }
+        }
+
         public async void Click(OptionType type)
         {
             switch (type)
@@ -59,6 +89,7 @@ namespace Code_Graph
                         this.LineChildren.Clear();
                         this.EllipseChildren.Clear();
                         this.ThumbChildren.Clear();
+                        this.StackPanel.Children.Clear();
                     }
                     break;
                 case OptionType.Add:
@@ -83,6 +114,21 @@ namespace Code_Graph
                             thumb.DragDelta += this.DragDelta;
                             thumb.DragCompleted += this.DragCompleted;
                             this.ThumbChildren.Add(thumb);
+                        }
+
+                        foreach (Csproj item in this.Files)
+                        {
+                            switch (item.Level)
+                            {
+                                case Level.Level2:
+                                case Level.Level3:
+                                    this.StackPanel.Children.Add(new ExpandButton(item.DisplayName, true));
+                                    this.StackPanel.Children.Add(new ExpandStackPanel(item.Children.Select(c => this.Files[c].DisplayName)));
+                                    break;
+                                default:
+                                    this.StackPanel.Children.Add(new ExpandButton(item.DisplayName, false));
+                                    break;
+                            }
                         }
                     }
                     break;
@@ -201,6 +247,21 @@ namespace Code_Graph
 
                             this.Click(OptionType.Update);
                         }
+                    }
+                    break;
+                case OptionType.Tutorial:
+                    {
+                        base.Frame.Navigate(typeof(TutorialPage));
+                    }
+                    break;
+                case OptionType.About:
+                    {
+                        await this.AboutDialog.ShowAsync(); // Dialog
+                    }
+                    break;
+                case OptionType.Split:
+                    {
+                        this.SplitView.IsPaneOpen = !this.SplitView.IsPaneOpen;
                     }
                     break;
                 default:

@@ -1,5 +1,6 @@
 ﻿using Code_Graph.Project;
 using System.Collections.Generic;
+using System.Windows.Input;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -7,8 +8,11 @@ using Windows.UI.Xaml.Controls.Primitives;
 
 namespace Code_Graph
 {
-    public sealed partial class MainPage : Page
+    public sealed partial class MainPage : Page, ICommand
     {
+        //@Converter
+        private string BooleanToGlyphConverter(bool value) => value ? "\uE26C" : "\uE26B";
+
         Csproj[] Files;
         Group[] Groups;
         KeyValuePair<int, int>[] Links;
@@ -26,11 +30,11 @@ namespace Code_Graph
         public MainPage()
         {
             this.InitializeComponent();
-            base.SizeChanged += (s, e) =>
+            this.Grid.SizeChanged += (s, e) =>
             {
                 if (e.NewSize == Size.Empty) return;
                 if (e.NewSize == e.PreviousSize) return;
-
+ 
                 this.AlignmentGrid.RebuildWithInterpolation(e.NewSize);
             };
             this.AlignmentGrid.ManipulationStarted += (s, e) =>
@@ -68,20 +72,6 @@ namespace Code_Graph
                     }
                 }
                 this.Click(OptionType.Update);
-            };
-            this.AppBarListView.ItemClick += (s, e) =>
-            {
-                if (e.ClickedItem is SymbolIcon item)
-                {
-                    switch (item.Symbol)
-                    {
-                        case Symbol.Add: this.Click(OptionType.New); break;
-                        case Symbol.Save: this.Click(OptionType.Save); break;
-                        case Symbol.OpenFile: this.Click(OptionType.Load); break;
-                        case Symbol.Delete: this.Click(OptionType.Clear); break;
-                        default: break;
-                    }
-                }
             };
         }
     }
