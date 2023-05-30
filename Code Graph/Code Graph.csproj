@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Enums\OptionType.cs" />
+    <Compile Include="Enums\UIType.cs" />
     <Compile Include="MainPage.Click.cs" />
     <Compile Include="MainPage.Drag.cs" />
     <Compile Include="MainPage.Export.cs" />
