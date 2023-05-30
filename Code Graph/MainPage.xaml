@@ -6,6 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:lcoal="using:Code_Graph"
     xmlns:elements="using:Code_Graph.Elements"
+    xmlns:strings="using:Code_Graph.Strings"
     mc:Ignorable="d"
     NavigationCacheMode="Enabled"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
@@ -157,34 +158,95 @@
         </Style>
         <Style x:Key="Level0Style" TargetType="Thumb" BasedOn="{StaticResource Level1Style}"/>
     </FrameworkElement.Resources>
-
+    
     <Grid>
 
+        <!--VisualState-->
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+
+                <!--Phone-->
+                <VisualState x:Name="Phone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--SplitView-->
+                        <Setter Target="SplitView.DisplayMode" Value="Overlay"/>
+                        <Setter Target="SplitView.IsPaneOpen" Value="False"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!--Pad-->
+                <VisualState x:Name="Pad">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--SplitView-->
+                        <Setter Target="SplitView.DisplayMode" Value="Inline"/>
+                        <Setter Target="SplitView.IsPaneOpen" Value="False"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <!--PC-->
+                <VisualState x:Name="PC">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger  MinWindowWidth="1000" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <!--SplitView-->
+                        <Setter Target="SplitView.IsPaneOpen" Value="False"/>
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <!--Extension-->
-        <elements:ApplicationTitleBarExtension x:Name="ApplicationView" TitleBarColor="{ThemeResource SystemColorBackgroundColor}" AccentTitleBarColor="White"/>
+        <elements:ApplicationTitleBarExtension x:Name="ApplicationView" TitleBarColor="{ThemeResource SystemAltHighColor}" AccentTitleBarColor="White"/>
 
-        <!--AlignmentGrid-->
-        <elements:AlignmentGridWithLines x:Name="AlignmentGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
-            <UIElement.ManipulationMode>
-                TranslateX, TranslateY
-            </UIElement.ManipulationMode>
-        </elements:AlignmentGridWithLines>
+        <SplitView 
+            x:Name="SplitView" 
+            IsPaneOpen="True" 
+            DisplayMode="Inline"
+            PanePlacement="Left"
+            PaneBackground="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+            >
+            <SplitView.Pane>
+                <ScrollViewer Margin="8,8,0,8" BorderThickness="1" BorderBrush="{ThemeResource AppBrush1}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                    <StackPanel x:Name="StackPanel" Margin="0,0,0,8">
+                        <!--Children-->
+                    </StackPanel>
+                </ScrollViewer>
+            </SplitView.Pane>
+            <Grid x:Name="Grid">
 
-        <!--Canvas-->
-        <Canvas x:Name="Canvas" Width="0" Height="0" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <UIElement.RenderTransform>
-                <TranslateTransform x:Name="TranslateTransform" X="0" Y="0"/>
-            </UIElement.RenderTransform>
-            <Canvas x:Name="LineCanvas">
-                <!--Children-->
-            </Canvas>
-            <Canvas x:Name="EllipseCanvas">
-                <!--Children-->
-            </Canvas>
-            <Canvas x:Name="ThumbCanvas">
-                <!--Children-->
-            </Canvas>
-        </Canvas>
+                <!--AlignmentGrid-->
+                <elements:AlignmentGridWithLines x:Name="AlignmentGrid" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+                    <UIElement.ManipulationMode>
+                        TranslateX, TranslateY
+                    </UIElement.ManipulationMode>
+                </elements:AlignmentGridWithLines>
+
+                <!--Canvas-->
+                <Canvas x:Name="Canvas" Width="0" Height="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <UIElement.RenderTransform>
+                        <TranslateTransform x:Name="TranslateTransform" X="0" Y="0"/>
+                    </UIElement.RenderTransform>
+                    <Canvas x:Name="LineCanvas">
+                        <!--Children-->
+                    </Canvas>
+                    <Canvas x:Name="EllipseCanvas">
+                        <!--Children-->
+                    </Canvas>
+                    <Canvas x:Name="ThumbCanvas">
+                        <!--Children-->
+                    </Canvas>
+                </Canvas>
+
+            </Grid>
+        </SplitView>
 
         <!--Foot-->
         <ListView 
