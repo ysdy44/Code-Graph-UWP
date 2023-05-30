@@ -10,5 +10,9 @@
         New,
         Save,
         Load,
+
+        Tutorial,
+        About,
+        Split,
     }
 }
