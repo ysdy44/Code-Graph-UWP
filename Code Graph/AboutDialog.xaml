@@ -1,0 +1,92 @@
+﻿<ContentDialog
+    x:Class="Code_Graph.AboutDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:strings="using:Code_Graph.Strings"
+    mc:Ignorable="d"
+    SecondaryButtonStyle="{StaticResource TextBlockButtonStyle}"
+    PrimaryButtonStyle="{StaticResource TextBlockButtonStyle}"
+    PrimaryButtonText="{strings:UI Type=OK}"
+    >
+
+
+    <ContentDialog.Resources>
+        <!--Storyboard-->
+        <Storyboard x:Name="AboutStoryboard">
+            <DoubleAnimation Storyboard.TargetName="AboutRotateTransform" Storyboard.TargetProperty="Angle" From="0" To="360" Duration="0:0:0.8">
+                <DoubleAnimation.EasingFunction>
+                    <CircleEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+    </ContentDialog.Resources>
+
+
+    <StackPanel>
+
+        <StackPanel.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition IsStaggeringEnabled="True"/>
+            </TransitionCollection>
+        </StackPanel.ChildrenTransitions>
+
+        <Border x:Name="AboutImage" Margin="10,10,10,16" CornerRadius="33" Width="165" Height="165" BorderThickness="1" BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}" Background="{ThemeResource AppBarBackgroundThemeBrush}">
+            <UIElement.RenderTransformOrigin>
+                0.5, 0.5
+            </UIElement.RenderTransformOrigin>
+            <UIElement.RenderTransform>
+                <RotateTransform x:Name="AboutRotateTransform" Angle="0"/>
+            </UIElement.RenderTransform>
+            <Canvas IsHitTestVisible="False" Width="1024" Height="1024">
+                <Polygon IsHitTestVisible="False" Fill="{ThemeResource ApplicationForegroundThemeBrush}">
+                    <Polygon.Points>
+                        51.15,83.978
+                        28.643,58.258
+                        18.738,58.258
+                        41.245,83.978
+                        18.738,109.698
+                        28.643,109.698
+                        51.15,83.978
+                    </Polygon.Points>
+                </Polygon>
+                <Polygon IsHitTestVisible="False" Fill="{ThemeResource ApplicationForegroundThemeBrush}">
+                    <Polygon.Points>
+                        113.784,83.978
+                        136.292,58.258
+                        146.196,58.258
+                        123.69,83.978
+                        146.196,109.698
+                        136.292,109.698
+                        113.784,83.978
+                    </Polygon.Points>
+                </Polygon>
+                <Rectangle IsHitTestVisible="False" Canvas.Left="63.621" Canvas.Top="105.309" Width="38.03" Height="8.779" Fill="{ThemeResource ApplicationForegroundThemeBrush}"/>
+            </Canvas>
+        </Border>
+
+        <Border Padding="12,0" CornerRadius="4" Height="24" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="1" BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}" Background="{ThemeResource AppBarBackgroundThemeBrush}">
+            <TextBlock Text="{strings:UI Type=Version}">
+                <!--Version-->
+            </TextBlock>
+        </Border>
+
+        <ContentControl Height="12"/>
+        <TextBlock HorizontalAlignment="Center" Text="{strings:UI Type=GithubTitle}">
+            <!--GithubTitle-->
+        </TextBlock>
+        <HyperlinkButton HorizontalAlignment="Center" Content="{strings:UI Type=Github}" NavigateUri="{x:Bind GithubLink}">
+            <!--Github-->
+        </HyperlinkButton>
+
+        <ContentControl Height="12"/>
+        <TextBlock HorizontalAlignment="Center" Text="{strings:UI Type=FeedbackTitle}">
+            <!--FeedbackTitle-->
+        </TextBlock>
+        <HyperlinkButton HorizontalAlignment="Center" Content="{strings:UI Type=Feedback}" NavigateUri="{x:Bind FeedbackLink}">
+            <!--Feedback-->
+        </HyperlinkButton>
+
+    </StackPanel>
+</ContentDialog>
