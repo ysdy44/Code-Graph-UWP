@@ -128,6 +128,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Strings\OptionTypeExtension.cs" />
     <Compile Include="Strings\UIExtension.cs" />
     <Compile Include="Structs\IntersectsRectAndLine.cs" />
   </ItemGroup>
