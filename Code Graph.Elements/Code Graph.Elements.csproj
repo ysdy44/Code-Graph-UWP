@@ -124,6 +124,7 @@
     <Compile Include="AlignmentGridWithLines.cs" />
     <Compile Include="AlignmentGridWithSpot.cs" />
     <Compile Include="ApplicationTitleBarExtension.cs" />
+    <Compile Include="CommandListView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Code_Graph.Elements.rd.xml" />
   </ItemGroup>
