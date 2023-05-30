@@ -26,14 +26,14 @@ namespace Code_Graph.Project
             for (int i = 0; i < length; i++)
             {
                 CsprojLine item = references[i];
-                files[i] = (new Csproj
+                files[i] = new Csproj
                 {
                     Name = item.Name,
                     DisplayName = item.DisplayName,
 
                     Index = i,
                     Children = references.Children(item.Lines).ToNullableArray()
-                });
+                };
             }
 
             for (int i = 0; i < length; i++)
@@ -96,25 +96,11 @@ namespace Code_Graph.Project
             int[] source = files.Select(ProjectsExtensions.Index).ToNullableArray();
             switch (level)
             {
-                case Level.None:
-                    return new Group
-                    {
-                        Level = level,
-                        Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
-                    };
                 case Level.Level1:
                     return new Group
                     {
                         X = x,
                         Y = source == null ? y + 4 : y + 4 + source.Length,
-                        Level = level,
-                        Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
-                    };
-                case Level.Level2:
-                    return new Group
-                    {
-                        X = x,
-                        Y = y,
                         Level = level,
                         Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
                     };
@@ -129,6 +115,8 @@ namespace Code_Graph.Project
                 default:
                     return new Group
                     {
+                        X = x,
+                        Y = y,
                         Level = level,
                         Source = files.Select(ProjectsExtensions.Index).ToNullableArray()
                     };
@@ -182,7 +170,7 @@ namespace Code_Graph.Project
             if (length == 0) return null;
 
             Csproj[] files = new Csproj[length];
-            
+
             foreach (GroupData item in datas)
             {
                 if (item.Source == null) continue;

@@ -4,8 +4,10 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:lcoal="using:Code_Graph"
     xmlns:elements="using:Code_Graph.Elements"
     mc:Ignorable="d"
+    NavigationCacheMode="Enabled"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     >
 
@@ -153,6 +155,7 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="Level0Style" TargetType="Thumb" BasedOn="{StaticResource Level1Style}"/>
     </FrameworkElement.Resources>
 
     <Grid>

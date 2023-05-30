@@ -9,7 +9,10 @@
         public int[] Children { get; internal set; }
         public int[] Parents { get; internal set; }
 
-        public Level Level => this.Children == null ? Level.Level1 : this.Parents == null ? Level.Level3 : Level.Level2;
+        public Level Level =>
+            this.Children == null ?
+            this.Parents == null ? Level.Level0 : Level.Level1 :
+            this.Parents == null ? Level.Level3 : Level.Level2;
 
         public const int Unit = 1024;
         public int Key
@@ -20,6 +23,8 @@
                 switch (this.Level)
                 {
                     case Level.None:
+                        break;
+                    case Level.Level0:
                         break;
                     case Level.Level1:
                         foreach (int item in this.Parents)
