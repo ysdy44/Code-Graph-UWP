@@ -48,7 +48,7 @@ namespace Code_Graph
 
                         Group key = this.Groups[link.Key];
                         Group value = group;
-                        Point arrow = new IntersectsRectAndLine(w, h, value.X * 10, value.Y * 10, key.X * 10, key.Y * 10).Arrow;
+                        Point arrow = new IntersectsRectAndLine(w / 2, h / 2, value.X * 10, value.Y * 10, key.X * 10, key.Y * 10).Arrow;
 
                         Ellipse ellipse = this.EllipseChildren[i] as Ellipse;
                         Canvas.SetLeft(ellipse, arrow.X - 6);

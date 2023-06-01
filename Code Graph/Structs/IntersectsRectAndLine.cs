@@ -2,55 +2,136 @@
 
 namespace Code_Graph
 {
+    public enum IntersectsDirect
+    {
+        Center,
+
+        Left,
+        Top,
+        Right,
+        Bottom,
+
+        LeftTop,
+        RightTop,
+        RightBottom,
+        LeftBottom,
+
+        Left2Top,
+        Top2Left,
+        Top2Right,
+        Right2Top,
+        Right2Bottom,
+        Bottom2Right,
+        Bottom2Left,
+        Left2Bottom,
+    }
+
     public readonly struct IntersectsRectAndLine
     {
         public readonly Point Arrow;
+
         public IntersectsRectAndLine(double w, double h, double x2, double y2, double x1, double y1)
         {
-            double w1 = x2 - w / 2;
-            double w2 = x2 + w / 2;
-            double h1 = y2 - h / 2;
-            double h2 = y2 + (h / 2);
+            this.Arrow = IntersectsRectAndLine.DirectVector((x2 - x1) / w, (y2 - y1) / h);
+            this.Arrow.X *= w;
+            this.Arrow.Y *= h;
+            this.Arrow.X += x2;
+            this.Arrow.Y += y2;
+        }
 
-            double k = (y1 - y2) / (x1 - x2);
-            double b = y2 - k * x2;
-
-            double xInt, yInt;
-
-            // Bottom
-            yInt = h2;
-            xInt = (yInt - b) / k;
-            if (xInt >= w1 && xInt <= w2)
+        public static IntersectsDirect GetDirect(double vectorX, double vectorY)
+        {
+            if (vectorX == 0)
             {
-                this.Arrow = new Point(xInt, yInt);
-                return;
+                if (vectorY == 0)
+                    return IntersectsDirect.Center;
+                else if (vectorY > 0)
+                    return IntersectsDirect.Bottom;
+                else
+                    return IntersectsDirect.Top;
             }
-
-            // Right
-            xInt = w2;
-            yInt = k * xInt + b;
-            if (yInt >= h1 && yInt <= h2)
+            else if (vectorY == 0)
             {
-                this.Arrow = new Point(xInt, yInt);
-                return;
+                if (vectorX > 0)
+                    return IntersectsDirect.Right;
+                else
+                    return IntersectsDirect.Left;
             }
-
-            // Top
-            yInt = h1;
-            xInt = (yInt - b) / k;
-            if (xInt >= w1 && xInt <= w2)
+            else
             {
-                this.Arrow = new Point(xInt, yInt);
-                return;
+                double absX = System.Math.Abs(vectorX);
+                double absY = System.Math.Abs(vectorY);
+
+                // First Quantity
+                if (vectorX > 0 && vectorY > 0)
+                {
+                    if (absX == absY) return IntersectsDirect.RightBottom;
+                    else if (absX > absY) return IntersectsDirect.Right2Bottom;
+                    else return IntersectsDirect.Bottom2Right;
+                }
+                // Second Quadrant
+                else if (vectorX < 0 && vectorY > 0)
+                {
+                    if (absX == absY) return IntersectsDirect.LeftBottom;
+                    else if (absX > absY) return IntersectsDirect.Left2Bottom;
+                    else return IntersectsDirect.Bottom2Left;
+                }
+                // Third Quadrant  
+                else if (vectorX < 0 && vectorY < 0)
+                {
+                    if (absX == absY) return IntersectsDirect.LeftTop;
+                    else if (absX > absY) return IntersectsDirect.Left2Top;
+                    else return IntersectsDirect.Top2Left;
+                }
+                // Fourth Quadrant  
+                else
+                {
+                    if (absX == absY) return IntersectsDirect.RightTop;
+                    else if (absX > absY) return IntersectsDirect.Right2Top;
+                    else return IntersectsDirect.Top2Right;
+                }
             }
-
-            // Left
-            xInt = w1;
-            yInt = k * xInt + b;
-            if (yInt >= h1 && yInt <= h2)
+        }
+        public static Point DirectVector(double vectorX, double vectorY)
+        {
+            switch (IntersectsRectAndLine.GetDirect(vectorX, vectorY))
             {
-                this.Arrow = new Point(xInt, yInt);
-                return;
+                case IntersectsDirect.Center:
+                    return new Point(0, 0);
+                case IntersectsDirect.Left:
+                    return new Point(1, 0);
+                case IntersectsDirect.Top:
+                    return new Point(0, 1);
+                case IntersectsDirect.Right:
+                    return new Point(-1, 0);
+                case IntersectsDirect.Bottom:
+                    return new Point(0, -1);
+                case IntersectsDirect.LeftTop:
+                    return new Point(1, 1);
+                case IntersectsDirect.RightTop:
+                    return new Point(-1, 1);
+                case IntersectsDirect.RightBottom:
+                    return new Point(-1, 1);
+                case IntersectsDirect.LeftBottom:
+                    return new Point(1, -1);
+                case IntersectsDirect.Left2Top:
+                    return new Point(1, System.Math.Abs(vectorY / vectorX));
+                case IntersectsDirect.Top2Left:
+                    return new Point(System.Math.Abs(vectorX / vectorY), 1);
+                case IntersectsDirect.Top2Right:
+                    return new Point(-System.Math.Abs(vectorX / vectorY), 1);
+                case IntersectsDirect.Right2Top:
+                    return new Point(-1, System.Math.Abs(vectorY / vectorX));
+                case IntersectsDirect.Right2Bottom:
+                    return new Point(-1, -System.Math.Abs(vectorY / vectorX));
+                case IntersectsDirect.Bottom2Right:
+                    return new Point(-System.Math.Abs(vectorX / vectorY), -1);
+                case IntersectsDirect.Bottom2Left:
+                    return new Point(System.Math.Abs(vectorX / vectorY), -1);
+                case IntersectsDirect.Left2Bottom:
+                    return new Point(1, -System.Math.Abs(vectorY / vectorX));
+                default:
+                    return new Point(0, 0);
             }
         }
     }

@@ -70,7 +70,7 @@ namespace Code_Graph
                             double w = thumb.ActualWidth;
                             double h = thumb.ActualHeight;
 
-                            Point arrow = new IntersectsRectAndLine(w, h, value.X * 10, value.Y * 10, key.X * 10, key.Y * 10).Arrow;
+                            Point arrow = new IntersectsRectAndLine(w / 2, h / 2, value.X * 10, value.Y * 10, key.X * 10, key.Y * 10).Arrow;
                             Canvas.SetLeft(ellipse, arrow.X - 6);
                             Canvas.SetTop(ellipse, arrow.Y - 6);
                         }
