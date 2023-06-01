@@ -186,6 +186,7 @@ namespace Code_Graph.Project
                 {
                     files[data.Index] = new Csproj
                     {
+                        Index = data.Index,
                         DisplayName = data.DisplayName,
                         Name = data.Name,
                         Children = data.Children.ToNullableArray()
