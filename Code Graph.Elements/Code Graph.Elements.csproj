@@ -131,6 +131,8 @@
     <Compile Include="ExpandStackPanel.xaml.cs">
       <DependentUpon>ExpandStackPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="IntersectsDirect.cs" />
+    <Compile Include="IntersectsRectAndLine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Code_Graph.Elements.rd.xml" />
   </ItemGroup>
