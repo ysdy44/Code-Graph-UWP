@@ -20,9 +20,6 @@ namespace Code_Graph
         int StartingIndex;
         Point StartingPoint;
 
-        Style this[Level item] => item == default ? null : this.Resources[$"{item}Style"] as Style;
-        Thumb this[int item] => this.ThumbCanvas.Children[item] as Thumb;
-
         UIElementCollection LineChildren => this.LineCanvas.Children;
         UIElementCollection EllipseChildren => this.EllipseCanvas.Children;
         UIElementCollection ThumbChildren => this.ThumbCanvas.Children;
@@ -34,19 +31,22 @@ namespace Code_Graph
             {
                 if (e.NewSize == Size.Empty) return;
                 if (e.NewSize == e.PreviousSize) return;
- 
+
                 this.AlignmentGrid.RebuildWithInterpolation(e.NewSize);
             };
             this.AlignmentGrid.ManipulationStarted += (s, e) =>
             {
+                if (this.Groups == null) return;
             };
             this.AlignmentGrid.ManipulationDelta += (s, e) =>
             {
+                if (this.Groups == null) return;
                 this.TranslateTransform.X += e.Delta.Translation.X;
                 this.TranslateTransform.Y += e.Delta.Translation.Y;
             };
             this.AlignmentGrid.ManipulationCompleted += (s, e) =>
             {
+                if (this.Groups == null) return;
                 int offfsetX = (int)(this.TranslateTransform.X / 10);
                 int offsetY = (int)(this.TranslateTransform.Y / 10);
 

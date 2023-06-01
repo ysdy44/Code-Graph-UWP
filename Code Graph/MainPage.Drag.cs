@@ -22,8 +22,6 @@ namespace Code_Graph
                 if (index < 0) return;
 
                 Group group = this.Groups[index];
-                if (group.X == default && group.Y == default) return;
-
                 double w = e.NewSize.Width;
                 double h = e.NewSize.Height;
 
