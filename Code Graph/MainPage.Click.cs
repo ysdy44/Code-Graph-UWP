@@ -7,10 +7,10 @@ using System.IO;
 using System.Linq;
 using System.Windows.Input;
 using System.Xml.Linq;
-using Windows.Foundation;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Shapes;
@@ -66,7 +66,7 @@ namespace Code_Graph
                             line.Y2 = value.Y * 10;
 
                             Ellipse ellipse = this.EllipseChildren[i] as Ellipse;
-                            Thumb thumb = this[link.Value];
+                            Thumb thumb = this.ThumbCanvas.Children[link.Value] as Thumb;
                             double w = thumb.ActualWidth;
                             double h = thumb.ActualHeight;
 
@@ -96,8 +96,17 @@ namespace Code_Graph
                     {
                         for (int i = 0; i < this.Links.Length; i++)
                         {
-                            this.LineChildren.Add(new Line());
-                            this.EllipseChildren.Add(new Ellipse());
+                            KeyValuePair<int, int> link = this.Links[i];
+                            Group item = this.Groups[link.Key];
+
+                            this.LineChildren.Add(new Line
+                            {
+                                Style = this.Resources[$"{item.Level}LineStyle"] as Style
+                            });
+                            this.EllipseChildren.Add(new Ellipse
+                            {
+                                Style = this.Resources[$"{item.Level}EllipseStyle"] as Style
+                            });
                         }
 
                         foreach (Group item in this.Groups)
@@ -107,7 +116,7 @@ namespace Code_Graph
                             Thumb thumb = new Thumb
                             {
                                 Tag = this.Files.DisplayName(item.Source),
-                                Style = this[item.Level]
+                                Style = this.Resources[$"{item.Level}ThumbStyle"] as Style
                             };
                             thumb.SizeChanged += this.DragSizeChanged;
                             thumb.DragStarted += this.DragStarted;
