@@ -1,10 +1,18 @@
-﻿using System;
+﻿using Code_Graph.Project.Datas;
+using System;
+using System.Collections.Generic;
+using System.Windows.Input;
+using System.Xml.Linq;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.ApplicationModel.Resources;
+using Windows.Storage.Streams;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using System.IO;
+using System.Linq;
 
 namespace Code_Graph
 {
@@ -24,6 +32,35 @@ namespace Code_Graph
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+        }
+
+        protected override async void OnFileActivated(FileActivatedEventArgs args)
+        {
+            foreach (IStorageItem item in args.Files)
+            {
+                if (item is IStorageFile file)
+                {
+                    using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read))
+                    {
+                        XDocument document = XDocument.Load(stream.AsStream());
+                        IEnumerable<GroupData> datas = MainPage.Load(document);
+                        if (datas.Count() == 0) break;
+
+                        Frame rootFrame = Window.Current.Content as Frame;
+
+                        if (rootFrame.Content is MainPage page)
+                        {
+                            ICommand command = page;
+                            command.Execute(datas.ToArray()); // Command
+                        }
+                        else if (rootFrame.Content == null)
+                        {
+                            rootFrame.Navigate(typeof(MainPage), datas.ToArray());
+                            Window.Current.Activate();
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>

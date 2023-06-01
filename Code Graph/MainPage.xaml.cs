@@ -1,10 +1,12 @@
 ﻿using Code_Graph.Project;
+using Code_Graph.Project.Datas;
 using System.Collections.Generic;
 using System.Windows.Input;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Navigation;
 
 namespace Code_Graph
 {
@@ -73,6 +75,20 @@ namespace Code_Graph
                 }
                 this.Click(OptionType.Update);
             };
+        }
+
+        //@BackRequested
+        /// <summary> The current page no longer becomes an active page. </summary>
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+        }
+        /// <summary> The current page becomes the active page. </summary>
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter is GroupData[] datas)
+            {
+                this.Execute(datas); // Command
+            }
         }
     }
 }

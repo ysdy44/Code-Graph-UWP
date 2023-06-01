@@ -45,6 +45,17 @@ namespace Code_Graph
             {
                 this.Click(item2);
             }
+            else if (parameter is GroupData[] datas)
+            {
+                this.Click(OptionType.Clear);
+
+                this.Files = datas.ToFiles();
+                this.Groups = this.Files.ToGroups(datas).ToArray();
+                this.Links = this.Groups.ToLines(this.Files).ToArray();
+                this.Click(OptionType.Add);
+
+                this.Click(OptionType.Update);
+            }
         }
 
         public async void Click(OptionType type)
