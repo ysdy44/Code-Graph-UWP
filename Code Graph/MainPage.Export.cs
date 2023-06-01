@@ -8,7 +8,7 @@ namespace Code_Graph
 {
     partial class MainPage
     {
-        private XElement Save(int index) => this.Save(this.Files[index]);
+        private XElement Save(int index) => MainPage.Save(this.Files[index]);
         public XElement Save(Group group)
         {
             return group.X == default && group.Y == default ?
@@ -25,7 +25,7 @@ namespace Code_Graph
                     new XAttribute("Y", group.Y),
                     group.Source.Select(this.Save));
         }
-        private XElement Save(Csproj file)
+        private static XElement Save(Csproj file)
         {
             return file.Children == null
                 ? new XElement("File",
@@ -44,13 +44,13 @@ namespace Code_Graph
                 file.Children.Select(a => new XElement("Index", a)));
         }
 
-        public IEnumerable<GroupData> Load(XDocument document)
+        public static IEnumerable<GroupData> Load(XDocument document)
         {
             foreach (XElement item in document.Root.Elements("Group"))
             {
                 GroupData group = new GroupData
                 {
-                    Source = this.Load(item.Elements("File")).ToNullableArray()
+                    Source = MainPage.Load(item.Elements("File")).ToNullableArray()
                 };
 
                 if (item.Attribute("X") is XAttribute x) group.X = (int)x;
@@ -59,13 +59,13 @@ namespace Code_Graph
                 yield return group;
             }
         }
-        private IEnumerable<CsprojData> Load(IEnumerable<XElement> files)
+        internal static IEnumerable<CsprojData> Load(IEnumerable<XElement> files)
         {
             foreach (XElement item in files)
             {
                 CsprojData file = new CsprojData
                 {
-                    Children = this.Load(item).ToNullableArray()
+                    Children = MainPage.Load(item).ToNullableArray()
                 };
 
                 if (item.Attribute("Index") is XAttribute index) file.Index = (int)index;
@@ -75,7 +75,7 @@ namespace Code_Graph
                 yield return file;
             }
         }
-        private IEnumerable<int> Load(XElement element)
+        internal static IEnumerable<int> Load(XElement element)
         {
             foreach (XElement item in element.Elements("Index"))
             {

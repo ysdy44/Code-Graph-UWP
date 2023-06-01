@@ -237,7 +237,7 @@ namespace Code_Graph
                         using (IRandomAccessStream stream = await file.OpenAsync(FileAccessMode.Read))
                         {
                             XDocument document = XDocument.Load(stream.AsStream());
-                            IEnumerable<GroupData> datas = this.Load(document);
+                            IEnumerable<GroupData> datas = MainPage.Load(document);
                             if (datas.Count() == 0) break;
 
                             this.Files = datas.ToFiles();
