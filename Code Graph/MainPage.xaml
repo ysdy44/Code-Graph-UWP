@@ -171,7 +171,49 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Style x:Key="Level0ThumbStyle" TargetType="Thumb" BasedOn="{StaticResource Level1Style}"/>
+        <Style x:Key="Level0ThumbStyle" TargetType="Thumb">
+            <Setter Property="MinWidth" Value="40"/>
+            <Setter Property="MinHeight" Value="40"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Border CornerRadius="7" BorderThickness="2">
+                            <Border.BorderBrush>
+                                <SolidColorBrush x:Name="SolidColorBrush" Color="DodgerBlue" Opacity="0"/>
+                            </Border.BorderBrush>
+
+                            <!--VisualState-->
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal" />
+                                    <VisualState x:Name="PointerOver">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SolidColorBrush" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <DoubleAnimation Duration="0" To="0.8" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SolidColorBrush" />
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ColorAnimation Duration="0" To="Gray" Storyboard.TargetProperty="Color" Storyboard.TargetName="SolidColorBrush" />
+                                            <DoubleAnimation Duration="0" To="1" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="SolidColorBrush" />
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+
+                            <Border Margin="1" CornerRadius="7" BorderThickness="1" BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                                <ContentControl Margin="14,7" FontSize="14" Content="{TemplateBinding Tag}"/>
+                            </Border>
+
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </FrameworkElement.Resources>
 
     <Grid>
