@@ -4,8 +4,324 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:strings="using:Code_Graph.Strings"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     >
 
+    <FlipView x:Name="FlipView" Background="{x:Null}">
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox MaxWidth="234">
+                    <StackPanel Width="234" Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="DodgerBlue">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <ContentControl Height="12"/>
+                                <SymbolIcon Symbol="Page" Foreground="White"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
+                                    C#
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+
+                        <ContentControl Width="12"/>
+
+                        <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="BlueViolet">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <ContentControl Height="12"/>
+                                <SymbolIcon Symbol="ProtectedDocument" Foreground="White"/>
+                                <TextBlock FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White">
+                                    csproj
+                                </TextBlock>
+                            </StackPanel>
+                        </Border>
+
+                        <ContentControl Width="12"/>
+
+                        <Border CornerRadius="2,14,2,2" Width="70" Height="100" Background="BlueViolet">
+                            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="24" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="50" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="46" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="28" HorizontalAlignment="Left"/>
+                                <ContentControl Height="5"/>
+                                <Rectangle Fill="White" Height="3" Width="50" HorizontalAlignment="Left"/>
+                            </StackPanel>
+                        </Border>
+
+                    </StackPanel>
+                </Viewbox>
+
+                <TextBlock Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="{strings:UI Type=Tutorial00}">
+                    <!--A C# project contains a .csproj file-->
+                </TextBlock>
+
+                <Border Grid.Row="4" Padding="12,8" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                    <TextBlock MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="{strings:UI Type=Tutorial01}">
+                        <!--csproj refers to C# project files in Visual Studio. When you create or open a C# project using Visual Studio, a .csproj file is automatically generated and added to the corresponding project's folder. CSPROJ files contain information about project settings, references, compiler options, and can be opened and edited with a text editor. By modifying the .csproj file, you can customize the properties and behavior of your project, such as adding/removing files, referencing libraries, changing the target framework, build configuration, and so on.-->
+                    </TextBlock>
+                </Border>
+
+                <Button x:Name="Forward00Button" Grid.Row="6" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource TextBlockButtonStyle}">
+                    <SymbolIcon Symbol="Forward"/>
+                </Button>
+
+            </Grid>
+        </FlipViewItem>
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Border Padding="12,2" RequestedTheme="Dark" Background="BlueViolet">
+                    <Canvas IsHitTestVisible="False" Width="104" Height="158">
+                        <Path IsHitTestVisible="False" Canvas.Left="13" Fill="White">
+                            <Path.Data>
+                                M0,22.4L16,10.5L32,25L57,0L80,16.6L80,63.4L57,80L32.124,55L16,69.6L0,57.6L0,22.4Z
+                            </Path.Data>
+                        </Path>
+                        <Path IsHitTestVisible="False" Canvas.Left="13" Fill="#7050A6">
+                            <Path.Data>
+                                M57,2L12,47L12,33L2,23L2,57L16,67L57,30L57,2Z
+                            </Path.Data>
+                        </Path>
+                        <Path IsHitTestVisible="False" Canvas.Left="13" Fill="#CC96F9">
+                            <Path.Data>
+                                M57,2L78,17L78,63L57,78L2,23L16,13L57,49.5L57,2Z
+                            </Path.Data>
+                        </Path>
+
+                        <Polygon IsHitTestVisible="False" StrokeThickness="2" Stroke="White">
+                            <Polygon.Points>
+                                12,92
+                                92,92
+                                52,142
+                            </Polygon.Points>
+                        </Polygon>
+
+                        <Border IsHitTestVisible="False" Canvas.Top="80" CornerRadius="12" Width="24" Height="24" Background="White">
+                            <TextBlock IsHitTestVisible="False" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Foreground="BlueViolet">
+                                A
+                            </TextBlock>
+                        </Border>
+                        <Border IsHitTestVisible="False" Canvas.Left="80" Canvas.Top="80" CornerRadius="12" Width="24" Height="24" Background="White">
+                            <TextBlock IsHitTestVisible="False" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Foreground="BlueViolet">
+                                B
+                            </TextBlock>
+                        </Border>
+                        <Border IsHitTestVisible="False" Canvas.Left="40" Canvas.Top="130" CornerRadius="12" Width="24" Height="24" Background="White">
+                            <TextBlock IsHitTestVisible="False" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Foreground="BlueViolet">
+                                C
+                            </TextBlock>
+                        </Border>
+
+                    </Canvas>
+                </Border>
+
+
+                <TextBlock Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="{strings:UI Type=Tutorial02}">
+                    <!--Within a solution folder, there may be multiple .csproj files that reference each other-->
+                </TextBlock>
+
+                <Button x:Name="Forward02Button" Grid.Row="4" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource TextBlockButtonStyle}">
+                    <SymbolIcon Symbol="Forward"/>
+                </Button>
+
+            </Grid>
+        </FlipViewItem>
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox MaxWidth="348">
+                    <Canvas MinWidth="348" Height="200" HorizontalAlignment="Center" >
+
+                        <Line X1="170" Y1="100" X2="270" Y2="20" StrokeThickness="3" Stroke="{ThemeResource AppBrush3}"/>
+                        <Line X1="170" Y1="100" X2="170" Y2="20" StrokeThickness="3" Stroke="{ThemeResource AppBrush3}"/>
+                        <Line X1="20" Y1="100" X2="170" Y2="20" StrokeThickness="3" Stroke="{ThemeResource AppBrush3}"/>
+                        <Line X1="170" Y1="100" X2="328" Y2="100" StrokeThickness="3" Stroke="{ThemeResource AppBrush3}"/>
+                        <Line X1="170" Y1="100" X2="270" Y2="180" StrokeThickness="3" Stroke="{ThemeResource AppBrush3}"/>
+                        <Line X1="328" Y1="100" X2="270" Y2="180" StrokeThickness="3" Stroke="{ThemeResource AppBrush2}"/>
+
+                        <Border Canvas.Left="150" Canvas.Top="80" CornerRadius="10" Width="40" Height="40" Background="{ThemeResource AppBrush3}">
+                            <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                A
+                            </TextBlock>
+                        </Border>
+                        <Border Canvas.Left="0" Canvas.Top="80" CornerRadius="10" Width="40" Height="40" Background="{ThemeResource AppBrush3}">
+                            <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                B
+                            </TextBlock>
+                        </Border>
+                        <Border Canvas.Left="250" Canvas.Top="0" CornerRadius="10" Width="40" Height="40" Background="{ThemeResource AppBrush1}">
+                            <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                C
+                            </TextBlock>
+                        </Border>
+                        <Border Canvas.Left="150" Canvas.Top="0" CornerRadius="10" Width="40" Height="40" Background="{ThemeResource AppBrush1}">
+                            <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                D
+                            </TextBlock>
+                        </Border>
+                        <Border Canvas.Left="250" Canvas.Top="160" CornerRadius="10" Width="40" Height="40" Background="{ThemeResource AppBrush2}">
+                            <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                E
+                            </TextBlock>
+                        </Border>
+                        <Border Canvas.Left="310" Canvas.Top="80" CornerRadius="10" Width="40" Height="40" Background="{ThemeResource AppBrush1}">
+                            <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                F
+                            </TextBlock>
+                        </Border>
+                        <Border Canvas.Left="70" Canvas.Top="160" CornerRadius="10" Width="40" Height="40" BorderThickness="1" BorderBrush="{ThemeResource ApplicationForegroundThemeBrush}" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+                            <TextBlock FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                G
+                            </TextBlock>
+                        </Border>
+
+                    </Canvas>
+                </Viewbox>
+
+                <TextBlock Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="{strings:UI Type=Tutorial03}">
+                    <!--Click the New button and select a solution folder to draw a C# project reference diagram-->
+                </TextBlock>
+
+                <Button x:Name="Forward03Button" Grid.Row="4" FontWeight="Bold" HorizontalAlignment="Center" Style="{StaticResource TextBlockButtonStyle}">
+                    <SymbolIcon Symbol="Forward"/>
+                </Button>
+
+            </Grid>
+        </FlipViewItem>
+
+
+        <FlipViewItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="22"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Viewbox MaxWidth="380">
+                    <Border Width="380" Padding="12" HorizontalAlignment="Center" VerticalAlignment="Center" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
+                        <Grid ColumnSpacing="12" RowSpacing="8">
+
+                            <FrameworkElement.Resources>
+                                <!--Style-->
+                                <Style TargetType="ToolTip">
+                                    <Setter Property="BorderBrush" Value="{ThemeResource AppBlueLinearGradientBrush}"/>
+                                    <Setter Property="Background" Value="{ThemeResource AppBlueLinearGradientBrush}"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="HorizontalAlignment" Value="Right"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                                <Style TargetType="Border">
+                                    <Setter Property="Width" Value="48"/>
+                                    <Setter Property="Height" Value="48"/>
+                                    <Setter Property="MinWidth" Value="32"/>
+                                    <Setter Property="MinHeight" Value="32"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="{ThemeResource ApplicationForegroundThemeBrush}"/>
+                                    <Setter Property="Background" Value="{ThemeResource ApplicationPageBackgroundThemeBrush}"/>
+                                </Style>
+                                <Style TargetType="SymbolIcon">
+                                    <Setter Property="Foreground" Value="{ThemeResource AppBlueLinearGradientBrush}"/>
+                                </Style>
+                            </FrameworkElement.Resources>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="260"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <ToolTip Content="{strings:UI Type=New}">
+                                <!--New-->
+                            </ToolTip>
+                            <ToolTip Grid.Row="1" Content="{strings:UI Type=Open}">
+                                <!--Open-->
+                            </ToolTip>
+                            <ToolTip Grid.Row="2" Content="{strings:UI Type=Save}">
+                                <!--Save-->
+                            </ToolTip>
+
+                            <Border Grid.Column="1">
+                                <SymbolIcon Symbol="Add"/>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="1">
+                                <SymbolIcon Symbol="OpenFile"/>
+                            </Border>
+                            <Border Grid.Column="1" Grid.Row="2">
+                                <SymbolIcon Symbol="Save"/>
+                            </Border>
+
+                        </Grid>
+                    </Border>
+                </Viewbox>
+
+                <TextBlock Grid.Row="2" MaxWidth="600" TextWrapping="WrapWholeWords" HorizontalAlignment="Center" VerticalAlignment="Center"
+                           Text="{strings:UI Type=Tutorial04}">
+                    <!--Click the Save or Open button to save or open the C# project reference diagram file-->
+                </TextBlock>
+
+                <Button x:Name="Button" Grid.Row="4" Padding="12,2" Width="Auto" Height="46" MinWidth="200" FontWeight="Bold" HorizontalAlignment="Center" Foreground="White" Background="{ThemeResource SystemColorControlAccentBrush}"
+                        Content="{strings:UI Type=Tutorial05}">
+                    <!--Start generating code graph-->
+                </Button>
+
+            </Grid>
+        </FlipViewItem>
+
+
+    </FlipView>
 </Page>
