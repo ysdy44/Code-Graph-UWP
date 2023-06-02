@@ -11,9 +11,9 @@
 
                 <ResourceDictionary x:Key="Light">
                     <!--Brush-->
-                    <SolidColorBrush x:Key="AppBrush3" Color="#000229"/>
-                    <SolidColorBrush x:Key="AppBrush2" Color="#703D00"/>
-                    <SolidColorBrush x:Key="AppBrush1" Color="#EEEBEE"/>
+                    <SolidColorBrush x:Key="AppBrush3" Color="#00026F"/>
+                    <SolidColorBrush x:Key="AppBrush2" Color="#D96A00"/>
+                    <SolidColorBrush x:Key="AppBrush1" Color="#E0E0E0"/>
 
                     <LinearGradientBrush x:Key="AppBlueLinearGradientBrush" StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Offset="0" Color="#00D1FE"/>
@@ -31,9 +31,9 @@
 
                 <ResourceDictionary x:Key="Dark">
                     <!--Brush-->
-                    <SolidColorBrush x:Key="AppBrush3" Color="#333D96"/>
-                    <SolidColorBrush x:Key="AppBrush2" Color="#A25800"/>
-                    <SolidColorBrush x:Key="AppBrush1" Color="#424242"/>
+                    <SolidColorBrush x:Key="AppBrush3" Color="#4856D3"/>
+                    <SolidColorBrush x:Key="AppBrush2" Color="#E37C00"/>
+                    <SolidColorBrush x:Key="AppBrush1" Color="#5D5D5D"/>
 
                     <LinearGradientBrush x:Key="AppBlueLinearGradientBrush" StartPoint="0,0" EndPoint="1,0">
                         <GradientStop Offset="0" Color="#76EAF8"/>
