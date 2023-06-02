@@ -26,5 +26,15 @@
         Clear,
         Tutorial,
         About,
+
+
+        Project,
+        
+        Tutorial00,
+        Tutorial01,
+        Tutorial02,
+        Tutorial03,
+        Tutorial04,
+        Tutorial05,
     }
 }

@@ -78,4 +78,11 @@
   <data name='Clear' xml:space='preserve'> <value>クリア</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>チュートリアル</value> </data>
   <data name='About' xml:space='preserve'> <value>もっと...</value> </data>
+  <data name='Project' xml:space='preserve'> <value>プロジェクト</value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>C# プロジェクトには .csproj ファイルが含まれています。</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>csproj は、Visual Studio の C# プロジェクト ファイルを参照します。Visual Studio を使用して C# プロジェクトを作成または開くと、.csproj ファイルが自動的に生成され、対応するプロジェクトのフォルダーに追加されます。CSPROJファイルには、プロジェクト設定、参照、コンパイラオプションに関する情報が含まれており、テキストエディタで開いて編集できます。.csproj ファイルを変更することで、ファイルの追加/削除、ライブラリの参照、ターゲット フレームワークの変更、ビルド構成など、プロジェクトのプロパティと動作をカスタマイズできます。</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>ソリューション フォルダー内には、相互に参照する複数の .csproj ファイルが存在する場合があります。</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>[新規作成] ボタンをクリックし、ソリューション フォルダーを選択して C# プロジェクト参照図を描画します。</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>[保存] または [開く] ボタンをクリックして、C# プロジェクト参照図ファイルを保存または開きます。</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>コード マップの生成を開始する</value> </data>
  </root>

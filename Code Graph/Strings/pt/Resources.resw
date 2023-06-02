@@ -78,4 +78,11 @@
   <data name='Clear' xml:space='preserve'> <value>Limpar</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>Tutoriais</value> </data>
   <data name='About' xml:space='preserve'> <value>Sobre...</value> </data>
+  <data name='Project' xml:space='preserve'> <value>Projeto</value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>Um projeto C# contém um arquivo .csproj</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>csproj refere-se a arquivos de projeto C# no Visual Studio. Quando você cria ou abre um projeto C# usando o Visual Studio, um arquivo .csproj é gerado automaticamente e adicionado à pasta do projeto correspondente. Os arquivos CSPROJ contêm informações sobre configurações do projeto, referências, opções do compilador e podem ser abertos e editados com um editor de texto. Ao modificar o arquivo .csproj, você pode personalizar as propriedades e o comportamento do seu projeto, como adicionar/remover arquivos, referenciar bibliotecas, alterar a estrutura de destino, configuração de compilação e assim por diante.</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>Dentro de uma pasta de solução, pode haver vários arquivos .csproj que fazem referência uns aos outros</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>Clique no botão Novo e selecione uma pasta de solução para desenhar um diagrama de referência de projeto C#</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>Clique no botão Salvar ou Abrir para salvar ou abrir o arquivo de diagrama de referência do projeto C#</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>Comece a gerar mapas de código</value> </data>
  </root>

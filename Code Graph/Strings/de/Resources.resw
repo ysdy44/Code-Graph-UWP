@@ -78,4 +78,11 @@
   <data name='Clear' xml:space='preserve'> <value>Löschen</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>Tutorials</value> </data>
   <data name='About' xml:space='preserve'> <value>Über...</value> </data>
+  <data name='Project' xml:space='preserve'> <value>Projekt</value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>Ein C#-Projekt enthält eine CSPROJ-Datei</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>csproj bezieht sich auf C#-Projektdateien in Visual Studio. Wenn Sie ein C#-Projekt mit Visual Studio erstellen oder öffnen, wird automatisch eine CSPROJ-Datei generiert und dem entsprechenden Projektordner hinzugefügt. CSPROJ-Dateien enthalten Informationen zu Projekteinstellungen, Referenzen und Compileroptionen und können mit einem Texteditor geöffnet und bearbeitet werden. Durch Ändern der CSPROJ-Datei können Sie die Eigenschaften und das Verhalten des Projekts anpassen, z. B. das Hinzufügen/Entfernen von Dateien, das Verweisen auf Bibliotheken, das Ändern des Zielframeworks, die Buildkonfiguration usw.</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>In einem Projektmappenordner können mehrere CSPROJ-Dateien vorhanden sein, die aufeinander verweisen</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>Klicken Sie auf die Schaltfläche Neu, und wählen Sie einen Projektmappenordner aus, um ein C#-Projektreferenzdiagramm zu zeichnen</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>Klicken Sie auf die Schaltfläche Speichern oder Öffnen, um die C#-Projektverweisdiagrammdatei zu speichern oder zu öffnen</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>Beginnen Sie mit der Generierung von Codezuordnungen</value> </data>
  </root>

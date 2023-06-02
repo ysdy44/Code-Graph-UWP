@@ -78,4 +78,11 @@
   <data name='Clear' xml:space='preserve'> <value>지우기</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>튜토리얼</value> </data>
   <data name='About' xml:space='preserve'> <value>대해 ...</value> </data>
+  <data name='Project' xml:space='preserve'> <value>프로젝트</value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>C# 프로젝트에는 .csproj 파일이 포함되어 있습니다</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>csproj는 Visual Studio의 C# 프로젝트 파일을 참조합니다. Visual Studio를 사용하여 C# 프로젝트를 만들거나 열면 .csproj 파일이 자동으로 생성되어 해당 프로젝트의 폴더에 추가됩니다. CSPROJ 파일에는 프로젝트 설정, 참조, 컴파일러 옵션에 대한 정보가 포함되어 있으며 텍스트 편집기로 열고 편집할 수 있습니다. .csproj 파일을 수정하여 파일 추가/제거, 라이브러리 참조, 대상 프레임워크 변경, 빌드 구성 등과 같은 프로젝트의 속성 및 동작을 사용자 지정할 수 있습니다.</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>솔루션 폴더 내에는 서로를 참조하는 여러 .csproj 파일이 있을 수 있습니다</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>새로 만들기 단추를 클릭하고 솔루션 폴더를 선택하여 C# 프로젝트 참조 다이어그램을 그립니다</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>저장 또는 열기 단추를 클릭하여 C# 프로젝트 참조 다이어그램 파일을 저장하거나 엽니다</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>코드 맵 생성 시작</value> </data>
  </root>

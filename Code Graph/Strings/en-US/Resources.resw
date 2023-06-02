@@ -78,4 +78,12 @@
   <data name='Clear' xml:space='preserve'> <value>Clear</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>Tutorials</value> </data>
   <data name='About' xml:space='preserve'> <value>About...</value> </data>
+  <data name='Project' xml:space='preserve'> <value>Project</value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>A C# project contains a .csproj file</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>"csproj refers to C# project files in Visual Studio. When you create or open a C# project using Visual Studio, a .csproj file is automatically generated and added to the corresponding project's folder. CSPROJ files contain information about project settings, references, compiler options, and can be opened and edited with a text editor. By modifying the .csproj file, you can customize the properties and behavior of your project, such as adding/removing files, referencing libraries, changing the target framework, build configuration, and so on.
+"</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>Within a solution folder, there may be multiple .csproj files that reference each other</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>Click the New button and select a solution folder to draw a C# project reference diagram</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>Click the Save or Open button to save or open the C# project reference diagram file</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>Start generating code graph</value> </data>
  </root>

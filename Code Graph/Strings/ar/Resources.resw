@@ -78,4 +78,11 @@
   <data name='Clear' xml:space='preserve'> <value>محو</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>دروس</value> </data>
   <data name='About' xml:space='preserve'> <value>حول...</value> </data>
+  <data name='Project' xml:space='preserve'> <value>المشروع </value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>يحتوي مشروع C # على ملف .csproj</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>يشير csproj إلى ملفات مشروع C # في Visual Studio. عند إنشاء أو فتح مشروع C# باستخدام Visual Studio ، يتم إنشاء ملف .csproj تلقائيا وإضافته إلى مجلد المشروع المقابل. تحتوي ملفات CSPROJ على معلومات حول إعدادات المشروع والمراجع وخيارات المترجم ويمكن فتحها وتحريرها باستخدام محرر نصوص. من خلال تعديل ملف .csproj ، يمكنك تخصيص خصائص وسلوك مشروعك ، مثل إضافة / إزالة الملفات ، والمكتبات المرجعية ، وتغيير إطار العمل الهدف ، وتكوين البناء ، وما إلى ذلك.</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>داخل مجلد الحلول ، قد يكون هناك العديد من ملفات .csproj التي تشير إلى بعضها البعض</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>انقر فوق الزر جديد وحدد مجلد حل لرسم رسم تخطيطي مرجعي لمشروع C #</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>انقر فوق الزر حفظ أو فتح لحفظ ملف الرسم التخطيطي المرجعي لمشروع C # أو فتحه</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>بدء إنشاء خرائط التعليمات البرمجية</value> </data>
  </root>

@@ -78,4 +78,11 @@
   <data name='Clear' xml:space='preserve'> <value>Wissen</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>Tutorials</value> </data>
   <data name='About' xml:space='preserve'> <value>Informatie..</value> </data>
+  <data name='Project' xml:space='preserve'> <value>Project</value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>Een C#-project bevat een .csproj-bestand</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>csproj verwijst naar C#-projectbestanden in Visual Studio. Wanneer u een C#-project maakt of opent met Visual Studio, wordt automatisch een CSPROJ-bestand gegenereerd en toegevoegd aan de map van het bijbehorende project. CSPROJ-bestanden bevatten informatie over projectinstellingen, verwijzingen, compileropties en kunnen worden geopend en bewerkt met een teksteditor. Door het CSPROJ-bestand te wijzigen, kunt u de eigenschappen en het gedrag van uw project aanpassen, zoals het toevoegen/verwijderen van bestanden, het verwijzen naar bibliotheken, het wijzigen van het doelframework, de buildconfiguratie, enzovoort.</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>In een oplossingsmap kunnen er meerdere CSPROJ-bestanden zijn die naar elkaar verwijzen</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>Klik op de knop Nieuw en selecteer een oplossingsmap om een C#-projectreferentiediagram te tekenen</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>Klik op de knop Opslaan of Openen om het C#-projectreferentiediagrambestand op te slaan of te openen</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>Begin met het genereren van codetoewijzingen</value> </data>
  </root>

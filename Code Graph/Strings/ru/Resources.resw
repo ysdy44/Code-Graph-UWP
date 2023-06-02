@@ -78,4 +78,11 @@
   <data name='Clear' xml:space='preserve'> <value>Очистить</value> </data>
   <data name='Tutorial' xml:space='preserve'> <value>Учебники</value> </data>
   <data name='About' xml:space='preserve'> <value>Около...</value> </data>
+  <data name='Project' xml:space='preserve'> <value>Проект</value> </data>
+  <data name='Tutorial00' xml:space='preserve'> <value>Проект C# содержит CSPROJ-файл</value> </data>
+  <data name='Tutorial01' xml:space='preserve'> <value>csproj ссылается на файлы проекта C# в Visual Studio. При создании или открытии проекта C# с помощью Visual Studio CSPROJ-файл автоматически создается и добавляется в папку соответствующего проекта. Файлы CSPROJ содержат информацию о настройках проекта, ссылках, параметрах компилятора и могут быть открыты и отредактированы с помощью текстового редактора. Изменяя CSPROJ-файл, можно настроить свойства и поведение проекта, такие как добавление и удаление файлов, ссылки на библиотеки, изменение целевой платформы, конфигурации сборки и т. д.</value> </data>
+  <data name='Tutorial02' xml:space='preserve'> <value>В папке решения может быть несколько CSPROJ-файлов, которые ссылаются друг на друга</value> </data>
+  <data name='Tutorial03' xml:space='preserve'> <value>Нажмите кнопку "Создать" и выберите папку решения, чтобы нарисовать эталонную схему проекта C#</value> </data>
+  <data name='Tutorial04' xml:space='preserve'> <value>Нажмите кнопку "Сохранить" или "Открыть", чтобы сохранить или открыть файл справочной схемы проекта C#</value> </data>
+  <data name='Tutorial05' xml:space='preserve'> <value>Начало создания кодовых карт</value> </data>
  </root>
