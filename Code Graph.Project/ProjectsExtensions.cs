@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Code_Graph.Project
 {
-    public static class ProjectsExtensions
+    public static partial class ProjectsExtensions
     {
         public static string FileChoices => ".csgraph";
         public const string FileType = ".csproj";
@@ -184,13 +184,26 @@ namespace Code_Graph.Project
 
                 foreach (CsprojData data in item.Source)
                 {
-                    files[data.Index] = new Csproj
+                    int i = data.Index;
+
+                    //@Debug
+                    // Crash when Index == Index
+                    for (int j = 0; j < 5; j++)
                     {
-                        Index = data.Index,
-                        DisplayName = data.DisplayName,
-                        Name = data.Name,
-                        Children = data.Children.ToNullableArray()
-                    };
+                        if (files[i] == null) break;
+                        i++;
+                    }
+
+                    if (files[i] == null)
+                    {
+                        files[i] = new Csproj
+                        {
+                            Index = i,
+                            DisplayName = data.DisplayName,
+                            Name = data.Name,
+                            Children = data.Children.ToNullableArray()
+                        };
+                    }
                 }
             }
 
