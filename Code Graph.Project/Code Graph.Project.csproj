@@ -126,6 +126,7 @@
     <Compile Include="Datas\GroupData.cs" />
     <Compile Include="Group.cs" />
     <Compile Include="Level.cs" />
+    <Compile Include="ProjectsExtensions.Sample.cs" />
     <Compile Include="ProjectsExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Code_Graph.Project.rd.xml" />

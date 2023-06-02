@@ -1,17 +1,20 @@
 ﻿using Code_Graph.Project;
 using Code_Graph.Project.Datas;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Input;
 using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Navigation;
 
 namespace Code_Graph
 {
     public sealed partial class MainPage : Page, ICommand
     {
+        //@Strings
+        private string Project => App.Resource.GetString(UIType.Project.ToString());
+
         //@Converter
         private string BooleanToGlyphConverter(bool value) => value ? "\uE26C" : "\uE26B";
 
@@ -29,6 +32,15 @@ namespace Code_Graph
         public MainPage()
         {
             this.InitializeComponent();
+            {
+                IEnumerable<GroupData> datas = ProjectsExtensions.Samples(this.Project);
+                this.Files = datas.ToFiles();
+                this.Groups = this.Files.ToGroups(datas).ToArray();
+                this.Links = this.Groups.ToLines(this.Files).ToArray();
+                this.Click(OptionType.Add);
+
+                this.Click(OptionType.Update);
+            }
             this.Grid.SizeChanged += (s, e) =>
             {
                 if (e.NewSize == Size.Empty) return;
