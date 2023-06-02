@@ -9,6 +9,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code Graph.Elements", "Code
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Code Graph", "Code Graph\Code Graph.csproj", "{F554AD94-FBB2-4429-B2D9-443EA46880D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Root", "Root", "{4770B6C7-7ED2-48DC-A2C6-7A3A11F5B247}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README-EN.md = README-EN.md
+		README-ZH.md = README-ZH.md
+		README.md = README.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
