@@ -11,6 +11,11 @@
     NavigationCacheMode="Enabled"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     >
+    
+    <!--Extension-->
+    <FrameworkElement.Tag>
+        <elements:ApplicationTitleBarExtension x:Name="ApplicationView" TitleBarColor="{ThemeResource SystemAltHighColor}" AccentTitleBarColor="White"/>
+    </FrameworkElement.Tag>
 
     <FrameworkElement.Resources>
         <!--Style-->
@@ -259,9 +264,6 @@
 
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-
-        <!--Extension-->
-        <elements:ApplicationTitleBarExtension x:Name="ApplicationView" TitleBarColor="{ThemeResource SystemAltHighColor}" AccentTitleBarColor="White"/>
 
         <SplitView 
             x:Name="SplitView" 
