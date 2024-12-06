@@ -3,14 +3,15 @@
 ![](ScreenShot/logo.png)
 
  
- In development, please stay tuned......
+ Windows 10 app store address: 
+[Buy Code-Graph - Microsoft Store](https://www.microsoft.com/store/productId/9NJGHRWNLPXW)   
 
 
 <br/>
 
 ## Function description
 
-Code Graph is a reference relationship visualizer that finds all the .csproj (C# project) files in a folder and draws the reference relationships between them.
+Code Graph is a free and open source Chinese chess Code Graph game.
 
 
 <br/>
