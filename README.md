@@ -4,7 +4,7 @@
 
  
  Windows 10 app store address: 
-[Buy Code-Graph - Microsoft Store](https://www.microsoft.com/store/productId/9NJGHRWNLPXW)   
+[Buy Code-Graph - Microsoft Store](https://apps.microsoft.com/detail/9njghrwnlpxw)   
 
 
 <br/>
